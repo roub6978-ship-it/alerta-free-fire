@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Alerta Free Fire</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      background: #080808;
+      color: white;
+    }
+
+    header {
+      background: linear-gradient(135deg, #ff5a00, #ff1e00);
+      padding: 25px 20px;
+      text-align: center;
+      box-shadow: 0 4px 20px #ff3c0055;
+    }
+
+    header h1 {
+      font-size: 28px;
+      font-weight: 900;
+    }
+
+    header p {
+      margin-top: 5px;
+      opacity: .9;
+    }
+
+    .container {
+      max-width: 600px;
+      margin: auto;
+      padding: 20px;
+    }
+
+    .status {
+      background: #151515;
+      border: 1px solid #292929;
+      border-radius: 15px;
+      padding: 18px;
+      margin-bottom: 20px;
+    }
+
+    .status span {
+      color: #00ff6a;
+      font-weight: bold;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin-bottom: 25px;
+    }
+
+    .card {
+      background: #151515;
+      border: 1px solid #292929;
+      border-radius: 15px;
+      padding: 20px;
+      text-align: center;
+      cursor: pointer;
+      transition: .2s;
+    }
+
+    .card:hover {
+      transform: translateY(-3px);
+      border-color: #ff4b00;
+    }
+
+    .card .icon {
+      font-size: 30px;
+      margin-bottom: 8px;
+    }
+
+    .card h3 {
+      font-size: 16px;
+    }
+
+    .section-title {
+      margin: 20px 0 12px;
+      font-size: 21px;
+    }
+
+    .alert {
+      background: #151515;
+      border-left: 4px solid #ff4b00;
+      border-radius: 10px;
+      padding: 16px;
+      margin-bottom: 12px;
+    }
+
+    .alert h3 {
+      margin-bottom: 6px;
+    }
+
+    .alert p {
+      color: #aaa;
+      font-size: 14px;
+      line-height: 1.4;
+    }
+
+    button {
+      width: 100%;
+      padding: 15px;
+      border: none;
+      border-radius: 10px;
+      background: #ff4b00;
+      color: white;
+      font-size: 16px;
+      font-weight: bold;
+      cursor: pointer;
+      margin-top: 10px;
+    }
+
+    button:hover {
+      background: #ff6500;
+    }
+
+    .notification {
+      position: fixed;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #222;
+      border: 1px solid #ff4b00;
+      padding: 15px 20px;
+      border-radius: 10px;
+      display: none;
+      width: 90%;
+      max-width: 400px;
+      text-align: center;
+    }
+
+    footer {
+      text-align: center;
+      color: #666;
+      padding: 30px 10px;
+      font-size: 12px;
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <h1>🔥 ALERTA FREE FIRE</h1>
+  <p>Fique por dentro das novidades</p>
+</header>
+
+<div class="container">
+
+  <div class="status">
+    🟢 Sistema: <span>Online</span><br>
+    🔔 Alertas: <span id="alertStatus">Ativados</span>
+  </div>
+
+  <div class="cards">
+
+    <div class="card" onclick="mostrar('eventos')">
+      <div class="icon">🎯</div>
+      <h3>Eventos</h3>
+    </div>
+
+    <div class="card" onclick="mostrar('codigos')">
+      <div class="icon">🎁</div>
+      <h3>Códigos</h3>
+    </div>
+
+    <div class="card" onclick="mostrar('noticias')">
+      <div class="icon">📰</div>
+      <h3>Notícias</h3>
+    </div>
+
+    <div class="card" onclick="ativarNotificacoes()">
+      <div class="icon">🔔</div>
+      <h3>Notificações</h3>
+    </div>
+
+  </div>
+
+  <h2 class="section-title">🚨 Últimos alertas</h2>
+
+  <div class="alert">
+    <h3>🔥 Novo evento disponível</h3>
+    <p>Confira os novos eventos e recompensas disponíveis no jogo.</p>
+  </div>
+
+  <div class="alert">
+    <h3>🎁 Recompensas</h3>
+    <p>Novas recompensas podem aparecer. Ative os alertas para receber avisos.</p>
+  </div>
+
+  <div class="alert">
+    <h3>📰 Atualização</h3>
+    <p>Fique atento às próximas novidades e atualizações do Free Fire.</p>
+  </div>
+
+  <button onclick="ativarNotificacoes()">
+    🔔 Ativar alertas
+  </button>
+
+</div>
+
+<footer>
+  Alerta Free Fire © 2026<br>
+  Aplicativo independente e não oficial.
+</footer>
+
+<div class="notification" id="notification"></div>
+
+<script>
+
+function mostrar(tipo) {
+
+  let mensagem = "";
+
+  if (tipo === "eventos") {
+    mensagem = "🎯 Área de eventos aberta!";
+  }
+
+  if (tipo === "codigos") {
+    mensagem = "🎁 Área de códigos aberta!";
+  }
+
+  if (tipo === "noticias") {
+    mensagem = "📰 Área de notícias aberta!";
+  }
+
+  exibirMensagem(mensagem);
+}
+
+
+function ativarNotificacoes() {
+
+  if ("Notification" in window) {
+
+    Notification.requestPermission().then(function(permission) {
+
+      if (permission === "granted") {
+
+        document.getElementById("alertStatus").innerText = "Ativados";
+
+        new Notification("🔥 Alerta Free Fire", {
+          body: "As notificações foram ativadas!"
+        });
+
+        exibirMensagem("🔔 Notificações ativadas!");
+
+      } else {
+
+        exibirMensagem("⚠️ Permissão para notificações não concedida.");
+
+      }
+
+    });
+
+  } else {
+
+    exibirMensagem("Seu navegador não suporta notificações.");
+
+  }
+}
+
+
+function exibirMensagem(texto) {
+
+  const box = document.getElementById("notification");
+
+  box.innerText = texto;
+  box.style.display = "block";
+
+  setTimeout(() => {
+    box.style.display = "none";
+  }, 3000);
+}
+
+</script>
+
+</body>
+  </html>
