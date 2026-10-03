@@ -1,212 +1,587 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Alerta Free Fire</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Alerta Free Fire - Halloween</title>
 
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: Arial, sans-serif;
-    }
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
 
-    body {
-      background: #080808;
-      color: white;
-    }
+body {
+  background: #070707;
+  color: white;
+}
 
-    header {
-      background: linear-gradient(135deg, #ff5a00, #ff1e00);
-      padding: 25px 20px;
-      text-align: center;
-      box-shadow: 0 4px 20px #ff3c0055;
-    }
+header {
+  background:
+    linear-gradient(rgba(0,0,0,.25), rgba(0,0,0,.65)),
+    linear-gradient(135deg, #ff6a00, #7b1500, #160016);
+  padding: 30px 20px;
+  text-align: center;
+  box-shadow: 0 5px 25px #ff5a003d;
+}
 
-    header h1 {
-      font-size: 28px;
-      font-weight: 900;
-    }
+header h1 {
+  font-size: 28px;
+  font-weight: 900;
+}
 
-    header p {
-      margin-top: 5px;
-      opacity: .9;
-    }
+header p {
+  margin-top: 8px;
+  color: #ffd4b5;
+}
 
-    .container {
-      max-width: 600px;
-      margin: auto;
-      padding: 20px;
-    }
+.container {
+  max-width: 680px;
+  margin: auto;
+  padding: 20px;
+}
 
-    .status {
-      background: #151515;
-      border: 1px solid #292929;
-      border-radius: 15px;
-      padding: 18px;
-      margin-bottom: 20px;
-    }
+/* STATUS */
 
-    .status span {
-      color: #00ff6a;
-      font-weight: bold;
-    }
+.status {
+  background: #141414;
+  border: 1px solid #2b2b2b;
+  border-radius: 15px;
+  padding: 17px;
+  margin-bottom: 18px;
+}
 
-    .cards {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 12px;
-      margin-bottom: 25px;
-    }
+.status span {
+  color: #00ff73;
+  font-weight: bold;
+}
 
-    .card {
-      background: #151515;
-      border: 1px solid #292929;
-      border-radius: 15px;
-      padding: 20px;
-      text-align: center;
-      cursor: pointer;
-      transition: .2s;
-    }
+/* MENU */
 
-    .card:hover {
-      transform: translateY(-3px);
-      border-color: #ff4b00;
-    }
+.cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
 
-    .card .icon {
-      font-size: 30px;
-      margin-bottom: 8px;
-    }
+.card {
+  background: #151515;
+  border: 1px solid #292929;
+  border-radius: 15px;
+  padding: 22px 10px;
+  text-align: center;
+  cursor: pointer;
+  transition: .2s;
+}
 
-    .card h3 {
-      font-size: 16px;
-    }
+.card:hover {
+  transform: translateY(-3px);
+  border-color: #ff6500;
+}
 
-    .section-title {
-      margin: 20px 0 12px;
-      font-size: 21px;
-    }
+.card .icon {
+  font-size: 32px;
+  margin-bottom: 8px;
+}
 
-    .alert {
-      background: #151515;
-      border-left: 4px solid #ff4b00;
-      border-radius: 10px;
-      padding: 16px;
-      margin-bottom: 12px;
-    }
+/* EVENTOS */
 
-    .alert h3 {
-      margin-bottom: 6px;
-    }
+#eventos {
+  display: none;
+}
 
-    .alert p {
-      color: #aaa;
-      font-size: 14px;
-      line-height: 1.4;
-    }
+.eventos-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 15px;
+}
 
-    button {
-      width: 100%;
-      padding: 15px;
-      border: none;
-      border-radius: 10px;
-      background: #ff4b00;
-      color: white;
-      font-size: 16px;
-      font-weight: bold;
-      cursor: pointer;
-      margin-top: 10px;
-    }
+.eventos-header h2 {
+  font-size: 23px;
+}
 
-    button:hover {
-      background: #ff6500;
-    }
+.voltar {
+  border: 1px solid #333;
+  background: #191919;
+  color: white;
+  padding: 9px 13px;
+  border-radius: 9px;
+  cursor: pointer;
+}
 
-    .notification {
-      position: fixed;
-      bottom: 20px;
-      left: 50%;
-      transform: translateX(-50%);
-      background: #222;
-      border: 1px solid #ff4b00;
-      padding: 15px 20px;
-      border-radius: 10px;
-      display: none;
-      width: 90%;
-      max-width: 400px;
-      text-align: center;
-    }
+/* HERO HALLOWEEN */
 
-    footer {
-      text-align: center;
-      color: #666;
-      padding: 30px 10px;
-      font-size: 12px;
-    }
-  </style>
+.halloween {
+  border-radius: 18px;
+  padding: 25px 20px;
+  margin-bottom: 18px;
+  background:
+    radial-gradient(circle at 85% 20%, #ff8a00 0, transparent 20%),
+    linear-gradient(135deg, #321000, #160016, #050505);
+  border: 1px solid #7b3b00;
+  box-shadow: 0 0 25px #ff650022;
+}
+
+.halloween .emoji {
+  font-size: 42px;
+}
+
+.halloween h2 {
+  color: #ff8a00;
+  margin: 7px 0;
+}
+
+.halloween p {
+  color: #bbb;
+  line-height: 1.5;
+}
+
+/* CONTAGEM */
+
+.contador {
+  margin-top: 17px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 7px;
+}
+
+.tempo {
+  background: #080808cc;
+  border: 1px solid #402000;
+  border-radius: 9px;
+  text-align: center;
+  padding: 10px 4px;
+}
+
+.tempo strong {
+  display: block;
+  font-size: 21px;
+  color: #ff7b00;
+}
+
+.tempo small {
+  color: #777;
+}
+
+/* FILTROS */
+
+.filtros {
+  display: flex;
+  gap: 7px;
+  overflow-x: auto;
+  margin-bottom: 18px;
+}
+
+.filtro {
+  white-space: nowrap;
+  background: #151515;
+  border: 1px solid #333;
+  color: #aaa;
+  padding: 9px 13px;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+.filtro.ativo {
+  background: #ff5a00;
+  border-color: #ff5a00;
+  color: white;
+}
+
+/* EVENTOS */
+
+.evento {
+  background: #141414;
+  border: 1px solid #292929;
+  border-radius: 15px;
+  margin-bottom: 15px;
+  overflow: hidden;
+}
+
+.banner {
+  padding: 22px;
+  background: linear-gradient(135deg, #ff6500, #5e1700);
+}
+
+.banner.roxo {
+  background: linear-gradient(135deg, #7c2cff, #250044);
+}
+
+.banner.verde {
+  background: linear-gradient(135deg, #08783e, #002f1a);
+}
+
+.banner.vermelho {
+  background: linear-gradient(135deg, #c40000, #350000);
+}
+
+.banner h3 {
+  font-size: 20px;
+  margin-bottom: 5px;
+}
+
+.banner p {
+  color: #ddd;
+}
+
+.info {
+  padding: 16px;
+}
+
+.info p {
+  color: #aaa;
+  line-height: 1.5;
+  font-size: 14px;
+}
+
+.tags {
+  display: flex;
+  gap: 7px;
+  flex-wrap: wrap;
+  margin: 12px 0;
+}
+
+.tag {
+  background: #242424;
+  color: #ddd;
+  border-radius: 6px;
+  padding: 5px 8px;
+  font-size: 12px;
+}
+
+.btn {
+  width: 100%;
+  padding: 12px;
+  background: #ff5800;
+  color: white;
+  border: 0;
+  border-radius: 9px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background: #ff7200;
+}
+
+/* ALERTA */
+
+.alert {
+  background: #151515;
+  border-left: 4px solid #ff5800;
+  border-radius: 10px;
+  padding: 16px;
+  margin-top: 18px;
+}
+
+.alert p {
+  color: #999;
+  margin-top: 6px;
+  font-size: 14px;
+}
+
+.toast {
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #202020;
+  border: 1px solid #ff5a00;
+  border-radius: 10px;
+  padding: 14px 18px;
+  width: 90%;
+  max-width: 420px;
+  text-align: center;
+  z-index: 20;
+}
+
+footer {
+  text-align: center;
+  color: #555;
+  padding: 30px 10px;
+  font-size: 12px;
+}
+</style>
 </head>
 
 <body>
 
 <header>
-  <h1>🔥 ALERTA FREE FIRE</h1>
-  <p>Fique por dentro das novidades</p>
+  <h1>🎃 ALERTA FREE FIRE</h1>
+  <p>Central de eventos e novidades</p>
 </header>
 
 <div class="container">
 
+<!-- INÍCIO -->
+
+<div id="inicio">
+
   <div class="status">
     🟢 Sistema: <span>Online</span><br>
-    🔔 Alertas: <span id="alertStatus">Ativados</span>
+    🎃 Temporada: <span>Halloween</span>
   </div>
 
   <div class="cards">
 
-    <div class="card" onclick="mostrar('eventos')">
-      <div class="icon">🎯</div>
+    <div class="card" onclick="abrirEventos()">
+      <div class="icon">🎃</div>
       <h3>Eventos</h3>
     </div>
 
-    <div class="card" onclick="mostrar('codigos')">
+    <div class="card" onclick="mensagem('🎁 Área de recompensas selecionada!')">
       <div class="icon">🎁</div>
-      <h3>Códigos</h3>
+      <h3>Recompensas</h3>
     </div>
 
-    <div class="card" onclick="mostrar('noticias')">
+    <div class="card" onclick="mensagem('📰 Confira as novidades oficiais!')">
       <div class="icon">📰</div>
       <h3>Notícias</h3>
     </div>
 
-    <div class="card" onclick="ativarNotificacoes()">
+    <div class="card" onclick="notificacoes()">
       <div class="icon">🔔</div>
-      <h3>Notificações</h3>
+      <h3>Alertas</h3>
     </div>
 
   </div>
 
-  <h2 class="section-title">🚨 Últimos alertas</h2>
-
   <div class="alert">
-    <h3>🔥 Novo evento disponível</h3>
-    <p>Confira os novos eventos e recompensas disponíveis no jogo.</p>
+    <b>🎃 Próximo evento temático</b>
+    <p>
+      Esta área está preparada para receber informações
+      oficiais sobre o próximo evento de Halloween.
+    </p>
   </div>
 
-  <div class="alert">
-    <h3>🎁 Recompensas</h3>
-    <p>Novas recompensas podem aparecer. Ative os alertas para receber avisos.</p>
+</div>
+
+
+<!-- EVENTOS -->
+
+<div id="eventos">
+
+  <div class="eventos-header">
+    <h2>🎃 Halloween</h2>
+    <button class="voltar" onclick="voltar()">← Voltar</button>
   </div>
 
-  <div class="alert">
-    <h3>📰 Atualização</h3>
-    <p>Fique atento às próximas novidades e atualizações do Free Fire.</p>
+  <div class="halloween">
+
+    <div class="emoji">🎃👻🦇</div>
+
+    <h2>Próximo Halloween</h2>
+
+    <p>
+      Central especial para acompanhar eventos,
+      missões e recompensas temáticas.
+    </p>
+
+    <!-- DATA CONFIGURÁVEL -->
+    <div class="contador">
+
+      <div class="tempo">
+        <strong id="dias">00</strong>
+        <small>Dias</small>
+      </div>
+
+      <div class="tempo">
+        <strong id="horas">00</strong>
+        <small>Horas</small>
+      </div>
+
+      <div class="tempo">
+        <strong id="minutos">00</strong>
+        <small>Min</small>
+      </div>
+
+      <div class="tempo">
+        <strong id="segundos">00</strong>
+        <small>Seg</small>
+      </div>
+
+    </div>
+
   </div>
 
-  <button onclick="ativarNotificacoes()">
-    🔔 Ativar alertas
-  </button>
+
+  <!-- FILTROS -->
+
+  <div class="filtros">
+
+    <button class="filtro ativo"
+      onclick="filtrar('todos', this)">
+      Todos
+    </button>
+
+    <button class="filtro"
+      onclick="filtrar('missao', this)">
+      🎯 Missões
+    </button>
+
+    <button class="filtro"
+      onclick="filtrar('recompensa', this)">
+      🎁 Recompensas
+    </button>
+
+    <button class="filtro"
+      onclick="filtrar('especial', this)">
+      ⭐ Especiais
+    </button>
+
+  </div>
+
+
+  <!-- EVENTO 1 -->
+
+  <div class="evento" data-tipo="missao">
+
+    <div class="banner">
+
+      <h3>🎃 Missões de Halloween</h3>
+      <p>Evento temático</p>
+
+    </div>
+
+    <div class="info">
+
+      <p>
+        Área reservada para acompanhar as missões
+        oficiais do evento de Halloween.
+      </p>
+
+      <div class="tags">
+        <span class="tag">🎃 Halloween</span>
+        <span class="tag">🎯 Missões</span>
+        <span class="tag">⏳ Temporário</span>
+      </div>
+
+      <button class="btn"
+        onclick="acompanhar('Missões de Halloween')">
+        🔔 Acompanhar
+      </button>
+
+    </div>
+
+  </div>
+
+
+  <!-- EVENTO 2 -->
+
+  <div class="evento" data-tipo="recompensa">
+
+    <div class="banner roxo">
+
+      <h3>👻 Caçada Fantasma</h3>
+      <p>Recompensas temáticas</p>
+
+    </div>
+
+    <div class="info">
+
+      <p>
+        Espaço para acompanhar futuras recompensas
+        oficiais relacionadas ao Halloween.
+      </p>
+
+      <div class="tags">
+        <span class="tag">👻 Fantasmas</span>
+        <span class="tag">🎁 Recompensas</span>
+      </div>
+
+      <button class="btn"
+        onclick="acompanhar('Caçada Fantasma')">
+        🔔 Acompanhar
+      </button>
+
+    </div>
+
+  </div>
+
+
+  <!-- EVENTO 3 -->
+
+  <div class="evento" data-tipo="especial">
+
+    <div class="banner verde">
+
+      <h3>🦇 Noite Sombria</h3>
+      <p>Evento especial</p>
+
+    </div>
+
+    <div class="info">
+
+      <p>
+        Área preparada para futuras atividades
+        especiais da temporada de Halloween.
+      </p>
+
+      <div class="tags">
+        <span class="tag">🦇 Especial</span>
+        <span class="tag">🌙 Halloween</span>
+      </div>
+
+      <button class="btn"
+        onclick="acompanhar('Noite Sombria')">
+        🔔 Acompanhar
+      </button>
+
+    </div>
+
+  </div>
+
+
+  <!-- EVENTO 4 -->
+
+  <div class="evento" data-tipo="recompensa">
+
+    <div class="banner vermelho">
+
+      <h3>🎁 Recompensas Assombradas</h3>
+      <p>Lista de recompensas</p>
+
+    </div>
+
+    <div class="info">
+
+      <p>
+        Consulte aqui as recompensas quando os
+        detalhes oficiais forem divulgados.
+      </p>
+
+      <div class="tags">
+        <span class="tag">🎁 Prêmios</span>
+        <span class="tag">💀 Halloween</span>
+      </div>
+
+      <button class="btn"
+        onclick="acompanhar('Recompensas Assombradas')">
+        🔔 Acompanhar
+      </button>
+
+    </div>
+
+  </div>
+
+
+  <div class="alert">
+
+    <b>⚠️ Importante</b>
+
+    <p>
+      Os nomes, datas e recompensas acima são espaços
+      preparados para o evento. Substitua-os pelos dados
+      oficiais quando a Garena publicar as informações.
+    </p>
+
+  </div>
+
+</div>
 
 </div>
 
@@ -215,75 +590,218 @@
   Aplicativo independente e não oficial.
 </footer>
 
-<div class="notification" id="notification"></div>
+<div class="toast" id="toast"></div>
+
 
 <script>
 
-function mostrar(tipo) {
+/*
+  ===============================
+  CONTAGEM REGRESSIVA
+  ===============================
 
-  let mensagem = "";
+  ALTERE A DATA ABAIXO quando
+  a data oficial for divulgada.
 
-  if (tipo === "eventos") {
-    mensagem = "🎯 Área de eventos aberta!";
+  Formato:
+  "ANO-MÊS-DIAT00:00:00"
+*/
+
+const dataHalloween =
+  new Date("2026-10-31T00:00:00").getTime();
+
+
+function atualizarContagem() {
+
+  const agora = new Date().getTime();
+
+  const distancia =
+    dataHalloween - agora;
+
+  if (distancia <= 0) {
+
+    document.getElementById("dias").innerText = "00";
+    document.getElementById("horas").innerText = "00";
+    document.getElementById("minutos").innerText = "00";
+    document.getElementById("segundos").innerText = "00";
+
+    return;
   }
 
-  if (tipo === "codigos") {
-    mensagem = "🎁 Área de códigos aberta!";
-  }
+  const dias =
+    Math.floor(distancia / (1000 * 60 * 60 * 24));
 
-  if (tipo === "noticias") {
-    mensagem = "📰 Área de notícias aberta!";
-  }
+  const horas =
+    Math.floor(
+      (distancia % (1000 * 60 * 60 * 24))
+      / (1000 * 60 * 60)
+    );
 
-  exibirMensagem(mensagem);
+  const minutos =
+    Math.floor(
+      (distancia % (1000 * 60 * 60))
+      / (1000 * 60)
+    );
+
+  const segundos =
+    Math.floor(
+      (distancia % (1000 * 60))
+      / 1000
+    );
+
+  document.getElementById("dias").innerText =
+    String(dias).padStart(2, "0");
+
+  document.getElementById("horas").innerText =
+    String(horas).padStart(2, "0");
+
+  document.getElementById("minutos").innerText =
+    String(minutos).padStart(2, "0");
+
+  document.getElementById("segundos").innerText =
+    String(segundos).padStart(2, "0");
 }
 
 
-function ativarNotificacoes() {
+setInterval(atualizarContagem, 1000);
 
-  if ("Notification" in window) {
+atualizarContagem();
 
-    Notification.requestPermission().then(function(permission) {
 
-      if (permission === "granted") {
+/* ABRIR EVENTOS */
 
-        document.getElementById("alertStatus").innerText = "Ativados";
+function abrirEventos() {
 
-        new Notification("🔥 Alerta Free Fire", {
-          body: "As notificações foram ativadas!"
-        });
+  document.getElementById("inicio").style.display =
+    "none";
 
-        exibirMensagem("🔔 Notificações ativadas!");
+  document.getElementById("eventos").style.display =
+    "block";
+
+  window.scrollTo(0, 0);
+}
+
+
+/* VOLTAR */
+
+function voltar() {
+
+  document.getElementById("eventos").style.display =
+    "none";
+
+  document.getElementById("inicio").style.display =
+    "block";
+
+  window.scrollTo(0, 0);
+}
+
+
+/* FILTROS */
+
+function filtrar(tipo, botao) {
+
+  document.querySelectorAll(".filtro")
+    .forEach(function(btn) {
+
+      btn.classList.remove("ativo");
+
+    });
+
+  botao.classList.add("ativo");
+
+
+  document.querySelectorAll(".evento")
+    .forEach(function(evento) {
+
+      if (tipo === "todos") {
+
+        evento.style.display = "block";
 
       } else {
 
-        exibirMensagem("⚠️ Permissão para notificações não concedida.");
+        evento.style.display =
+          evento.dataset.tipo === tipo
+          ? "block"
+          : "none";
 
       }
 
     });
-
-  } else {
-
-    exibirMensagem("Seu navegador não suporta notificações.");
-
-  }
 }
 
 
-function exibirMensagem(texto) {
+/* ACOMPANHAR */
 
-  const box = document.getElementById("notification");
+function acompanhar(nome) {
 
-  box.innerText = texto;
-  box.style.display = "block";
+  mensagem(
+    "🔔 Você está acompanhando: " + nome
+  );
+}
 
-  setTimeout(() => {
-    box.style.display = "none";
+
+/* MENSAGEM */
+
+function mensagem(texto) {
+
+  const toast =
+    document.getElementById("toast");
+
+  toast.innerText = texto;
+
+  toast.style.display = "block";
+
+  setTimeout(function() {
+
+    toast.style.display = "none";
+
   }, 3000);
+}
+
+
+/* NOTIFICAÇÕES */
+
+function notificacoes() {
+
+  if (!("Notification" in window)) {
+
+    mensagem(
+      "Seu navegador não suporta notificações."
+    );
+
+    return;
+  }
+
+
+  Notification.requestPermission()
+    .then(function(permissao) {
+
+      if (permissao === "granted") {
+
+        new Notification(
+          "🎃 Alerta Free Fire",
+          {
+            body:
+              "As notificações do aplicativo foram ativadas!"
+          }
+        );
+
+        mensagem(
+          "🔔 Notificações ativadas!"
+        );
+
+      } else {
+
+        mensagem(
+          "⚠️ Permissão não concedida."
+        );
+
+      }
+
+    });
 }
 
 </script>
 
 </body>
-  </html>
+      </html>
