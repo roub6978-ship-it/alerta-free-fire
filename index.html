@@ -64,6 +64,123 @@ footer{text-align:center;color:#555;padding:30px 10px;font-size:12px}
 .influenciador p{color:#aaa;line-height:1.55;font-size:14px;margin-bottom:15px}
 
 .texto-gigante{margin-top:14px}.texto-gigante p{color:#aaa;line-height:1.7;font-size:14px;margin-bottom:16px}.texto-gigante h4{color:#ff8a00;font-size:17px;line-height:1.35;margin:20px 0 8px}.metas,.passos-pro{display:grid;grid-template-columns:1fr 1fr;gap:9px;margin:18px 0 20px}.metas div,.passos-pro div{background:#0d0d0d;border:1px solid #292929;border-radius:11px;padding:13px}.metas strong,.passos-pro strong{display:block;color:#ff7b00;margin-bottom:5px}.metas span,.passos-pro span{display:block;color:#999;font-size:12px;line-height:1.45}.fonte-oficial{background:#0c0c0c;border-left:3px solid #ff6500;padding:13px 12px;border-radius:8px}.jogador-pro{background:radial-gradient(circle at 10% 5%,#7c2cff33,transparent 27%),linear-gradient(135deg,#080016,#151515,#080808);border:1px solid #3e1b67;border-radius:18px;padding:24px 20px;margin-top:20px;box-shadow:0 0 25px #7c2cff18}.jogador-icon{font-size:38px;margin-bottom:8px}.jogador-pro h2{color:#c08aff;font-size:23px;line-height:1.25;margin-bottom:7px}.jogador-pro h3{font-size:17px;line-height:1.35;margin-bottom:10px}.jogador-pro .texto-gigante h4{color:#c08aff}.jogador-pro .btn{background:#7c2cff}.jogador-pro .btn:hover{background:#944cff}@media(max-width:500px){.metas,.passos-pro{grid-template-columns:1fr}}
+
+
+
+.mudancas{
+  background:
+    radial-gradient(circle at 90% 10%,#ff650044,transparent 28%),
+    linear-gradient(135deg,#160b00,#151515,#090909);
+  border:1px solid #633000;
+  border-radius:18px;
+  padding:24px 20px;
+  margin-top:20px;
+  box-shadow:0 0 25px #ff650018;
+}
+.mudancas-icon{font-size:38px;margin-bottom:8px}
+.mudancas h2{color:#ff8a00;font-size:23px;margin-bottom:7px}
+.mudancas h3{font-size:17px;line-height:1.35;margin-bottom:14px}
+.mudancas-intro{color:#aaa;line-height:1.6;font-size:14px;margin-bottom:15px}
+.atualizacao{
+  background:#0d0d0d;
+  border:1px solid #292929;
+  border-radius:12px;
+  padding:15px;
+  margin-top:12px;
+}
+.atualizacao h4{color:#ff8a00;font-size:16px;line-height:1.35;margin-bottom:7px}
+.atualizacao p{color:#aaa;line-height:1.6;font-size:14px}
+.atualizacao ul{margin:9px 0 0 18px;color:#999}
+.atualizacao li{margin:6px 0;line-height:1.5;font-size:14px}
+.status-atualizacao{
+  display:inline-block;
+  margin-top:10px;
+  background:#242424;
+  color:#ddd;
+  border-radius:6px;
+  padding:5px 8px;
+  font-size:12px;
+}
+.alerta-fonte{
+  margin-top:16px;
+  background:#0c0c0c;
+  border-left:3px solid #ff6500;
+  padding:13px 12px;
+  border-radius:8px;
+  color:#999;
+  line-height:1.55;
+  font-size:13px;
+}
+
+
+.cards .card:last-child{
+  grid-column:1/-1;
+  padding:28px 16px;
+  background:linear-gradient(135deg,#2a1100,#151515 55%,#241000);
+  border:2px solid #ff6500;
+  box-shadow:0 0 18px #ff650044, inset 0 0 18px #ff650011;
+  position:relative;
+}
+.cards .card:last-child::after{
+  content:'CLIQUE PARA VER';
+  display:block;
+  width:max-content;
+  margin:13px auto 0;
+  padding:6px 11px;
+  border-radius:999px;
+  background:#ff6500;
+  color:white;
+  font-size:11px;
+  font-weight:900;
+  letter-spacing:.4px;
+}
+.cards .card:last-child:hover{
+  transform:translateY(-5px) scale(1.01);
+  border-color:#ff8a00;
+  box-shadow:0 0 28px #ff650066, inset 0 0 22px #ff650018;
+}
+.cards .card:last-child .icon{font-size:40px}
+.cards .card:last-child h3{font-size:21px;color:#fff}
+#atualizacoes .mudancas{margin-bottom:0}
+#atualizacoes .mudancas h3{font-size:19px;line-height:1.45;color:#f0f0f0}
+#atualizacoes .mudancas-intro{color:#d6d6d6;font-size:16px;line-height:1.7}
+#atualizacoes .atualizacao{padding:17px;margin-top:14px}
+#atualizacoes .atualizacao h4{font-size:18px;line-height:1.4;color:#ff9b22}
+#atualizacoes .atualizacao p{color:#e0e0e0;font-size:16px;line-height:1.75}
+#atualizacoes .atualizacao ul{color:#d8d8d8}
+#atualizacoes .atualizacao li{font-size:16px;line-height:1.65;margin:7px 0}
+#atualizacoes .status-atualizacao{color:#f5f5f5;font-size:13px;padding:6px 10px}
+#atualizacoes .alerta-fonte{color:#d8d8d8;font-size:15px;line-height:1.7}
+
+.botao-atualizacoes{
+  margin:24px 0 8px;
+  padding:30px 18px;
+  text-align:center;
+  cursor:pointer;
+  border:2px solid #ff6500;
+  border-radius:22px;
+  background:linear-gradient(135deg,#211000,#151515 55%,#281200);
+  box-shadow:0 0 22px #ff650044,inset 0 0 24px #ff650012;
+  transition:.2s;
+}
+.botao-atualizacoes:hover{
+  transform:translateY(-4px);
+  border-color:#ff9a00;
+  box-shadow:0 0 32px #ff650066,inset 0 0 28px #ff650018;
+}
+.botao-atualizacoes-icon{font-size:46px;margin-bottom:9px}
+.botao-atualizacoes h2{font-size:24px;margin-bottom:13px;color:#fff}
+.botao-atualizacoes span{
+  display:inline-block;
+  padding:8px 14px;
+  border-radius:999px;
+  background:#ff6500;
+  color:#fff;
+  font-size:11px;
+  font-weight:900;
+  letter-spacing:.5px;
+}
+
 </style>
 </head>
 <body>
@@ -81,6 +198,9 @@ footer{text-align:center;color:#555;padding:30px 10px;font-size:12px}
 <div class="card" onclick="mensagem('🎁 Área de recompensas selecionada!')"><div class="icon">🎁</div><h3>Recompensas</h3></div>
 <div class="card" onclick="mensagem('📰 Confira as novidades oficiais!')"><div class="icon">📰</div><h3>Notícias</h3></div>
 <div class="card" onclick="notificacoes()"><div class="icon">🔔</div><h3>Alertas</h3></div>
+<div class="card" onclick="abrirAtualizacoes()"><div class="icon">🚀</div><h3>Próximas atualizações</h3></div>
+
+
 </div>
 <div class="alert"><b>🎃 Próximo evento temático</b><p>Confira abaixo os visuais adicionados à área de eventos.</p></div>
 </div>
@@ -136,6 +256,44 @@ footer{text-align:center;color:#555;padding:30px 10px;font-size:12px}
 </div>
 
 
+
+
+
+<div id="atualizacoes" style="display:none">
+<div class="eventos-header"><h2>🚀 Próximas atualizações</h2><button class="voltar" onclick="voltarAtualizacoes()">← Voltar</button></div>
+
+<section class="mudancas" style="margin-top:0">
+  <div class="mudancas-icon">🛠️🔄</div>
+  <h2>🔥 Novidades e próximas atualizações Free Fire</h2>
+  <h3>O que já está ativo, o que continua e o que vem por aí</h3>
+  <p class="mudancas-intro">Confira os conteúdos de outubro que você mandou, organizados em cards personalizados.</p>
+
+  <div class="atualizacao"><h4>🔫 OB55 — Arsenal que mudou o meta</h4><p><b>M7</b> (rifle de assalto), <b>Skorp</b> (SMG), <b>RPK</b> (LMG) e <b>Hawk</b> (sniper) chegaram com novo sistema de recoil e já estão influenciando o meta.</p><span class="status-atualizacao">🟢 Já ativo</span></div>
+
+  <div class="atualizacao"><h4>🌪️ Caos no Battle Royale — Eventos aleatórios</h4><p><b>Peak Mania, Razing Storm, Weapon Surge, Airdrops? Meteors!, Black Friday</b> com máquinas de vending com desconto e outros eventos continuam aparecendo nas partidas.</p><span class="status-atualizacao">🟢 Continuam rolando</span></div>
+
+  <div class="atualizacao"><h4>🍥 Naruto Shippuden — A invasão da Nove-Caudas</h4><p><b>Chapter One: Nine Tails Strikes</b> fica ativo até <b>15 de outubro</b>, com Vila da Folha, eventos da Nove-Caudas no mapa, ninjutsus, Reanimation, Gamakichi e recompensas temáticas.</p><span class="status-atualizacao">⏳ Até 15 de outubro</span></div>
+
+  <div class="atualizacao"><h4>🦉 Passe Booyah — Guardiões do Oeste</h4><p>Tema de coruja/falcão (<b>Duty Hoots</b>), de <b>1º a 31 de outubro</b> ou até 1º de novembro em alguns servidores. Premium: <b>300 diamantes</b>. Premium Plus: <b>800 diamantes</b>.</p><ul><li>Conjunto Coruja do Oeste — nível 1</li><li>G36 - Disparo do Oeste</li><li>Parede de Gel - Coruja do Oeste</li><li>Conjunto Falcão do Oeste — nível 100</li></ul><span class="status-atualizacao">🟢 Em andamento</span></div>
+
+  <div class="atualizacao"><h4>🥷 Estratégia Ninja — Arsenal Atualizado</h4><p>Até <b>16 de outubro</b>. Causar dano no CS Ranqueado libera skins temporárias e recompensas.</p><ul><li>M7 - Rin</li><li>Skorp - Órion</li><li>Harpia - Skyler</li><li>RPK - Steffie</li><li>Ouro + Pacote de Voz Jiraiya</li></ul><span class="status-atualizacao">⏳ Até 16 de outubro</span></div>
+
+  <div class="atualizacao"><h4>🎰 Bazar do Drop — Giros e rotações</h4><p>As rotações continuam frequentes. Uma começa em <b>7 de outubro</b> com destaque para a <b>Parede de Gel - Monumento Hokage</b>. Outras já trouxeram Rasengan e itens ninja.</p><span class="status-atualizacao">🔄 Rotações frequentes</span></div>
+
+  <div class="atualizacao"><h4>👽 Próximo ataque — Free Fire x Ben 10</h4><p>Relatos e vazamentos apontam início por volta de <b>15 de outubro de 2026</b>. São esperados bundles de Ben Tennyson e Gwen Tennyson, emotes de transformação como <b>Alien X</b> e <b>Heatblast</b>, skins de MAG-7 e Machete, Jeep Rust-bucket / Grandpa Max's Trailer, Katana Diamond-head e eventos com recompensas grátis, como banner do Omnitrix.</p><p style="margin-top:8px">⚠️ <b>Ainda não é confirmação oficial completa da Garena.</b></p><span class="status-atualizacao">👀 Previsto / aguardando confirmação</span></div>
+
+  <div class="atualizacao"><h4>🏅 Ranked — Próximas temporadas</h4><ul><li><b>CS Ranked Season 39:</b> começou em 1º de outubro.</li><li><b>BR Ranked Season 54:</b> esperada para 1º de novembro.</li></ul><span class="status-atualizacao">📅 Temporadas</span></div>
+
+  <div class="atualizacao"><h4>🎟️ Central de Codiguins — Outubro</h4><p>Vários códigos oficiais foram divulgados para outubro, com recompensas como conjuntos Gateira/Gateiro, Dino, Terror Noturno e outros itens. O código pode expirar ou ter limite de uso.</p><p style="margin-top:8px"><b>Resgate:</b> use o portal oficial de recompensas da Garena.</p><span class="status-atualizacao">🎁 Códigos e recompensas</span></div>
+
+  <div class="atualizacao"><h4>🚀 Depois de outubro — O que vem aí?</h4><p><b>OB56</b> é esperado para dezembro; o <b>Advance Server</b> pode abrir em novembro. Eventos de recarga, Trilha Turbo, Vira-Carta e outros giros continuam rodando normalmente.</p><span class="status-atualizacao">🔮 Próximos conteúdos</span></div>
+
+  <div class="atualizacao"><h4>📌 Resumão — Fique ligado</h4><p><b>Naruto acaba dia 15 → Ben 10 é esperado por volta do dia 15 → Guardiões do Oeste roda o mês todo → novas armas e eventos aleatórios já estão aí → BR Ranked Season 54 é esperada para 1º de novembro.</b></p></div>
+
+  <div class="alerta-fonte"><b>⚠️ Importante:</b> datas, recompensas, vazamentos e conteúdos podem mudar conforme servidor, região ou confirmação oficial da Garena.</div>
+</section>
+</div>
+
 <section class="influenciador">
   <div class="influenciador-icon">🎥🔥</div>
   <h2>Como se tornar influenciador?</h2>
@@ -179,6 +337,12 @@ footer{text-align:center;color:#555;padding:30px 10px;font-size:12px}
   <button class="btn" onclick="mensagem('🏆 Treine, monte seu time e acompanhe as competições oficiais do Free Fire!')">🌎 Quero chegar ao FFWS</button>
 </section>
 
+<div class="botao-atualizacoes" onclick="abrirAtualizacoes()">
+  <div class="botao-atualizacoes-icon">🚀</div>
+  <h2>Próximas atualizações</h2>
+  <span>CLIQUE PARA VER AS ATUALIZAÇÕES</span>
+</div>
+
 <footer>Alerta Free Fire © 2026<br>Aplicativo independente e não oficial.</footer>
 <div class="toast" id="toast"></div>
 
@@ -193,6 +357,8 @@ function atualizarContagem(){
  document.getElementById('segundos').innerText=String(Math.floor(d%60000/1000)).padStart(2,'0');
 }
 setInterval(atualizarContagem,1000); atualizarContagem();
+function abrirAtualizacoes(){document.getElementById('inicio').style.display='none';document.getElementById('eventos').style.display='none';document.getElementById('atualizacoes').style.display='block';window.scrollTo(0,0)}
+function voltarAtualizacoes(){document.getElementById('atualizacoes').style.display='none';document.getElementById('inicio').style.display='block';window.scrollTo(0,0)}
 function abrirEventos(){document.getElementById('inicio').style.display='none';document.getElementById('eventos').style.display='block';window.scrollTo(0,0)}
 function voltar(){document.getElementById('eventos').style.display='none';document.getElementById('inicio').style.display='block';window.scrollTo(0,0)}
 function filtrar(tipo,botao){
@@ -201,6 +367,7 @@ function filtrar(tipo,botao){
 }
 function acompanhar(nome){mensagem('🔔 Você está acompanhando: '+nome)}
 function mensagem(texto){const t=document.getElementById('toast');t.innerText=texto;t.style.display='block';setTimeout(()=>t.style.display='none',3000)}
+
 function notificacoes(){
  if(!('Notification' in window)){mensagem('Seu navegador não suporta notificações.');return}
  Notification.requestPermission().then(p=>{
